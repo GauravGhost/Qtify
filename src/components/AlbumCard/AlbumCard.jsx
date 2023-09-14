@@ -1,26 +1,30 @@
+import { Chip } from '@mui/material';
 import styles from './AlbumCard.module.css'
-import AlbumImage from '../../assets/SingleAlbum.png'
-const data = {
-    image: AlbumImage,
-    follows: "100 Follows",
-    title: "New Bollywood"
-}
 
-const AlbumCard = () => {
-    const { image, follows, title } = data;
-    return (
-        <div className={styles.albumCard}>
-            <div className={styles.card}>
-                <img src={image} alt={title} />
-                <div>
-                    <button>{follows}</button>
+
+const AlbumCard = ({data, type}) => {
+    const getCard = (type) =>{
+        switch(type){
+            case 'album': {
+                const {image, follows, title, songs} = data;
+                return (
+                <div className={styles.wrapper}>
+                    <div className={styles.card}>
+                        <img src={image} alt="album cover" />
+                        <div className={styles.banner}>
+                            <Chip className={styles.chip} label={`${follows} Follows`} size="small" />
+                        </div>
+                    </div>
+                    <div className={styles.titleWrapper}>
+                        <p>{title}</p>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <p>{title}</p>
-            </div>
-        </div>
-    )
+                )
+            }
+            default: <></>
+        }
+    }
+    return getCard(type);
 }
 
 export default AlbumCard
