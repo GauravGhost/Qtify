@@ -4,6 +4,7 @@ import AlbumCard from './components/AlbumCard/AlbumCard';
 import HeroSection from './components/HeroSection/HeroSection';
 import NavBar from './components/NavBar/NavBar';
 import { fetchTopAlbums } from './api/api';
+import Section from './components/Section/Section';
 
 function App() {
   const [topAlbums, setTopAlbums] = useState([]);
@@ -21,13 +22,8 @@ function App() {
     <div className="App">
       <NavBar />
       <HeroSection />
-      <div style={{display:'flex'}}>
-        {topAlbums.map((item) => {
-          return (
-            <AlbumCard key={item.id} data={item} type="album" />
-          )
-        })}
-
+      <div>
+        <Section data={topAlbums} title="Top Album" />
       </div>
     </div>
   );
