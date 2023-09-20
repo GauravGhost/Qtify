@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSwiper } from "swiper/react"
-import {ReactComponent as LeftArrow} from '../../assets/Left.svg';
+import { ReactComponent as LeftArrow } from '../../assets/Left.svg';
 import styles from './Carousel.module.css';
 
 
@@ -9,9 +9,10 @@ const CarouselLeftNavigation = () => {
     const [isBeginning, setIsBeginning] = useState(swiper.isBeginning);
     useEffect(() => {
         swiper.on("slideChange", function () {
-            setIsBeginning(swiper.isBeginning);
+                setIsBeginning(swiper.isBeginning);
+                console.log("triggered")
         })
-    }, [])
+    }, [swiper, isBeginning])
 
     return (
         <div className={styles.leftNavigation}>

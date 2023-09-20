@@ -10,7 +10,7 @@ export const CarouselRightNavigation = () => {
         swiper.on("slideChange", function () {
             setIsEnd(swiper.isEnd);
         })
-    }, [])
+    }, [swiper, isEnd])
   return (
     <div className={styles.rightNavigation}>
     {
