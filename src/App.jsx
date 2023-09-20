@@ -41,7 +41,7 @@ function App() {
         <GenreSection data={songs} title="Songs" genreList={genreList} />
       </div>
       <hr className={styles.divider} />
-
+      <FAQAccordion />
     </div>
   );
 }
