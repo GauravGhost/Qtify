@@ -6,8 +6,8 @@ import NavBar from './components/NavBar/NavBar';
 import { fetchGenreList, fetchNewAlbums, fetchSongs, fetchTopAlbums } from './api/api';
 import Section from './components/Section/Section';
 
-import FAQAccordion from './components/FAQ/FAQAccordion.JSX';
-import GenreSection from './components/genreSection/GenreSection';
+import FAQAccordion from './components/FAQ/FAQAccordion.jsx';
+import GenreSection from './components/GenreSection/GenreSection';
 
 
 function App() {
@@ -27,7 +27,6 @@ function App() {
     generatedata();
   }, [])
 
-  console.log(genreList);
   return (
     <div className={styles.app}>
       <NavBar />
