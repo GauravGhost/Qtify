@@ -1,8 +1,8 @@
 import { Chip } from '@mui/material';
-import styles from './AlbumCard.module.css'
+import styles from './Card.module.css'
 
 
-const AlbumCard = ({data, type}) => {
+const Card = ({data, type}) => {
     const getCard = (type) =>{
         switch(type){
             case 'album': {
@@ -21,10 +21,26 @@ const AlbumCard = ({data, type}) => {
                 </div>
                 )
             }
+            case 'song': {
+                const {image, likes, title} = data;
+                return (
+                <div className={styles.wrapper}>
+                    <div className={styles.card}>
+                        <img src={image} alt="song cover" />
+                        <div className={styles.banner}>
+                            <Chip className={styles.chip} label={`${likes} Likes`} size="small" />
+                        </div>
+                    </div>
+                    <div className={styles.titleWrapper}>
+                        <p>{title}</p>
+                    </div>
+                </div>
+                )
+            }
             default: <></>
         }
     }
     return getCard(type);
 }
 
-export default AlbumCard
+export default Card
