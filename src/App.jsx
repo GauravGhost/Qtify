@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import styles from './App.module.css';
-import Card from './components/Card/Card';
+
 import HeroSection from './components/HeroSection/HeroSection';
 import NavBar from './components/NavBar/NavBar';
 import { fetchGenreList, fetchNewAlbums, fetchSongs, fetchTopAlbums } from './api/api';
 import Section from './components/Section/Section';
+
+import FAQAccordion from './components/FAQ/FAQAccordion.JSX';
 import GenreSection from './components/genreSection/GenreSection';
-import FAQAccordion from './components/FAQ/FAQAccordion.jsx';
+
 
 function App() {
   const [topAlbums, setTopAlbums] = useState([]);
