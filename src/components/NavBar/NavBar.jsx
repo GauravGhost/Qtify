@@ -2,11 +2,11 @@ import Button from "../Button/Button"
 import Logo from "../Logo/Logo"
 import Search from "../Search/Search"
 import styles from './NavBar.module.css'
-const NavBar = () => {
+const NavBar = ({songs}) => {
   return (
     <nav className={styles.navbar}>
         <Logo />
-        <Search />
+        <Search songs={songs} />
         <Button children={"Give Feedback"} />
     </nav>
   )

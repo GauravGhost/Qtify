@@ -37,9 +37,6 @@ const GenreSection = ({ data, title, genreList }) => {
                     </TabList>
                 </Box>
                 <TabPanel key={value} value={value}>
-                    <div>
-                        {console.log(value, songData)}
-                    </div>
                     {
                         !songData?.length ?
                             <CircularProgress />

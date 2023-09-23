@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <NavBar />
+      <NavBar songs={songs}/>
       <HeroSection />
       <div style={{marginBottom: '30px'}}>
         <Section data={topAlbums} title="Top Albums" />

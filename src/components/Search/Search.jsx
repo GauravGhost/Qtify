@@ -1,18 +1,41 @@
 import styles from './Search.module.css';
-import SearchIcon from '../../assets/SearchIcon.svg'
+import { ReactComponent as SearchIcon } from '../../assets/SearchIcon.svg'
+import { Autocomplete, TextField } from '@mui/material';
 
-const Search = () => {
+const SearchDiv = ({ data }) => {
     return (
-        <div >
-            <form className={styles.wrapper} action="">
-                <input className={styles.search} type="text" />
-                <div>
-                    <button className={styles.searchButton} type='submit'>
-                        <img src={SearchIcon} alt='searchIcon' />
-                    </button>
-                </div>
-            </form>
+        <p>{data.title}</p>
+    )
+}
 
+const Search = ({ songs }) => {
+    return (
+        <div className={styles.wrapper}>
+            <div className={styles.searchBoxWrapper}>
+                <Autocomplete
+                    className={styles.search}
+                    freeSolo
+                    id="free-solo-2-demo"
+                    disableClearable
+                    options={songs.map((option) => option.title)}
+                    renderInput={(params) => (
+                        <TextField
+                            variant='filled'
+                            className={styles.searchBox}
+                            {...params}
+                            label="Search input"
+                            InputProps={{
+                                ...params.InputProps,
+                                type: 'search',
+                            }}
+                        />
+                    )}
+                />
+
+            </div>
+            <button className={styles.searchButton}>
+                <SearchIcon />
+            </button>
         </div>
     )
 }
