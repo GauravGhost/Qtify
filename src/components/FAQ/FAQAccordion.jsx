@@ -1,4 +1,4 @@
-import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
+import { Accordion, AccordionSummary, AccordionDetails, Typography, Box } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import styles from './FAQAccordion.module.css';
 import { StyleSharp } from '@mui/icons-material';
@@ -18,7 +18,10 @@ const faqlist = [
 
 export default function FAQAccordion() {
   return (
-    <div className={styles.faqAccordion}>
+    <Box className={styles.faqAccordion} sx={{ py: 10 }}>
+      <h1 style={{ textAlign: 'center' }}>
+        FAQs
+      </h1>
       {
         faqlist.map(({ summary, details }, index) => {
           return (
@@ -26,7 +29,7 @@ export default function FAQAccordion() {
               <Accordion >
                 <AccordionSummary
                   className={styles.accordionSummary}
-                  expandIcon={<ExpandMoreIcon />}
+                  expandIcon={<ExpandMoreIcon className={styles.expandIcon} />}
                   aria-controls="panel1a-content"
                   id="panel1a-header"
                 >
@@ -44,6 +47,6 @@ export default function FAQAccordion() {
 
         })
       }
-    </div>
+    </Box>
   );
 }

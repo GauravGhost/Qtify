@@ -10,9 +10,8 @@ const CarouselLeftNavigation = () => {
     useEffect(() => {
         swiper.on("slideChange", function () {
                 setIsBeginning(swiper.isBeginning);
-                console.log("triggered")
         })
-    }, [swiper, isBeginning])
+    }, [swiper])
 
     return (
         <div className={styles.leftNavigation}>

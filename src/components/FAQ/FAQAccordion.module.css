@@ -1,4 +1,5 @@
 .faqAccordion{
+    margin-inline: 100px;
     .accordionSummary {
         border: 1px solid var(--color-white);
         border-radius: 10px;
@@ -16,3 +17,6 @@
     margin-block: 20px;
 }
 
+.expandIcon {
+    color: var(--color-primary);
+}

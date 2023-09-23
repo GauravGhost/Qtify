@@ -15,6 +15,7 @@ function App() {
   const [newAlbums, setNewAlbums] = useState([]);
   const [songs, setSongs] = useState([]);
   const [genreList, setGenreList] = useState([]);
+  
   const generatedata = async () => {
     setTopAlbums(await fetchTopAlbums());
     setNewAlbums(await fetchNewAlbums());
